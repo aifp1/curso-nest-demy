@@ -49,3 +49,7 @@ DTO es una clase que tiene que lucir de cierta manera, se asegura que fluya bien
 Las entiedades se pueden ver como una tabla de base de datos mysql, en cambio con interface no se podria
 
 PartialType sirve para tener caracteristicas opcionales, aunque igual se le pueden poner unicas sin problemas
+
+Como se hace para ejecutar la api en un servidor mediante un comando de node?
+R: yarn build para construir la aplicacion para modo produccion
+   yarn start:prod para ejecutar el modo ejecucion

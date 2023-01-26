@@ -53,3 +53,7 @@ PartialType sirve para tener caracteristicas opcionales, aunque igual se le pued
 Como se hace para ejecutar la api en un servidor mediante un comando de node?
 R: yarn build para construir la aplicacion para modo produccion
    yarn start:prod para ejecutar el modo ejecucion
+
+Para servir contenido estatico se debe crear el directorio public e ejecutar el siguiente comando yarn add @nestjs/serve-static y realizar la
+configuracion correspondiente
+

@@ -1,0 +1,51 @@
+Nest es un framework de node que permite trabajar con backend
+    -> es expandible por la estructura modular que permite usar otras librerias facilmente
+    -> versatil porque brinda la columna vertebral de todo tipo de aplicaciones del lado del servidor
+    -> progresivo porque toma lo mejor y ultimo de JS y nos ofrece soluciones robustas
+
+Table plus -> es como phpmyadmin
+
+Reemplazar modulos en caliente
+
+Se hace la configuracion por modulos automaticamente con vite
+
+Para utilizar Paste JSON as code se deben realizar los siguientes pasos
+- se debe copiar el json a la planilla o al archivo interfaces creado
+- ctrl + shift + p para abrir la paleta de comandos
+- elegir Paste JSON as Code
+- dar nombre a la interfaz
+
+Generico es una especie de plantilla a partir de la cual se creartan posteriormente clases/interfces que actuaran como tipos concretos
+En la funcion en vez de poner <Interface>, se pone <T> haciendo referencia a que el tipo de dato es generico
+
+Sustitucion de Liskov este principio dice lo siguiente:
+- Si en una parte del codigo y creamos una clase y esta clase genera clases hijas, estas clases hijas deben sustituir a la padre y el codigo
+    tiene que seguir funcionando de la misma manera
+
+Decoradores son funciones
+
+Nest es un marco de trabajo dogmatico, es decir, se trabaja de una forma parecida
+    -> Casi todos los desarrolladores Nest tienen una parecida codificacion
+    -> Generalmente se usa typescript en Nest
+    -> Nest esta inspirado en Angular pero no es necesario saber angular para aprender nest.
+
+.eslintrc es el archivo de configuracion del lintter y es una serie de buenas practicas que recomienda nest, para seguir ciertos estandares
+.prettierrc se encarga de las buenas practicas espacios, etc.
+nest-cli.json es el archivo de configuracion del nest cli
+
+Controllers, controlan rutas, son los encargados de escuchar la solicitud y emitir una respuesta
+
+Service, aloja la logica de negocio de tal manera que sea reutilizable mediante inyeccion de dependencias
+Todos los servicios son providers, pero no todos los providers son servicios
+
+Providers son clases que se pueden inyectar dependencias
+
+Pipes ayudan a transformar la data recibida para asegurar un tipo de dato.
+
+Exceptions filters maneja los errores de codigo en mensajes de respuesta http
+
+DTO es una clase que tiene que lucir de cierta manera, se asegura que fluya bien las diferentes partes de la aplicacion
+
+Las entiedades se pueden ver como una tabla de base de datos mysql, en cambio con interface no se podria
+
+PartialType sirve para tener caracteristicas opcionales, aunque igual se le pueden poner unicas sin problemas

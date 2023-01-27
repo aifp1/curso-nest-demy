@@ -6,15 +6,22 @@ import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { Pokemon } from './entities/pokemon.entity';
 import { BadRequestException, InternalServerErrorException, NotFoundException } from '@nestjs/common/exceptions';
 import { PaginationDto } from '../common/dto/pagination.dto';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class PokemonService {
+
+  private defaultLimit: number;
 
   constructor(
     //Si se quiere ingresar de una manera controlada se implementa de esta forma con mongoose
     @InjectModel(Pokemon.name)
     private readonly pokemonModel: Model<Pokemon>,
-  ){}
+
+    private readonly configService: ConfigService,
+  ){
+    this.defaultLimit = +this.configService.get<Number>('default_limit');
+  }
 
   async create(createPokemonDto: CreatePokemonDto) {
     createPokemonDto.name = createPokemonDto.name.toLocaleLowerCase();
@@ -27,7 +34,7 @@ export class PokemonService {
   }
 
   async findAll(paginationDto: PaginationDto) {
-    const { limit = 10, offset = 0 }= paginationDto 
+    const { limit = this.defaultLimit, offset = 0 }= paginationDto 
     try {
       const pokemons = await this.pokemonModel.find().limit(limit).skip(offset).sort({
         no: 1

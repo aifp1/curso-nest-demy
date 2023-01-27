@@ -12,6 +12,11 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
+      //Ojo que esta opcion puede consumir mas memoria
+      transform: true,
+      transformOptions: {
+        enableImplicitConversion: true,
+      }
     })
   )
 
